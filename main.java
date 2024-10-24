@@ -3,6 +3,7 @@ import java.util.Random;
 public class main{
 		public static void main(String[] args){
 		Random random = new Random();
+		try{
 		if (args.length == 1){
 				int numeroCaras = Integer.parseInt(args[0]);
 				if(numeroCaras <= 0){
@@ -28,6 +29,9 @@ public class main{
 		else{
 			System.out.println("Numero de argumentos no valido");
 		}
+}catch(Exception e){
+	System.out.println("Error :"+e);
+}
 }
 
 }
