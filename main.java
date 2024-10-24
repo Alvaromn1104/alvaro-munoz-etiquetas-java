@@ -1,13 +1,24 @@
+
+import java.util.Random;
 public class main{
 		public static void main(String[] args){
-		try{
-			int[] miArray = new int[3];
-			for (int numero : miArray){
-			System.out.println(numero);
+		if (args.length ==1){
+			try{
+				int numeroCaras = Integer.parseInt(args[0]);
+				if(numeroCaras <= 0){
+					System.out.println("El numero de caras debe ser mayor que 0");
+				}else{
+					Random random = new Random();
+					int resultado = random.nextInt(numeroCaras) + 1;
+					System.out.println("Numero de caras: "+numeroCaras+", resultado: "+resultado);
+				}
+			}catch(NumberFormatException e){
+			System.out.println("Error: "+e);
+			}
+			
 
-}
-}catch (Exception e){
-System.out.println("Error" +e);
-}
-}
+		}else {
+			System.out.println("Ingrese el numero de caras");
+			}
+		}
 }
